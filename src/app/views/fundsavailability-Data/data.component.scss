@@ -1,0 +1,23 @@
+.card-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .card-table th{
+    font-family: Verdana, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    color: rgb(96, 95, 95);
+  }
+  .card-table th,
+  .card-table td {
+    padding: 10px;
+    text-align: left;
+  }
+  .card-table th,
+  .card-table td:active {
+    z-index: 1000;
+  }
+  .card-table th {
+    background-color: #efe8e8;
+  }

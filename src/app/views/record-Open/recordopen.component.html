@@ -1,0 +1,307 @@
+
+<div class="row">
+    <div class="col-6"> 
+        <mat-card class="parent_card">
+            <mat-card-header style=" padding-bottom: 5px;"><strong>Insufficient Funds</strong></mat-card-header>
+            <mat-card-content style="margin: 5px;">
+                <form [formGroup]="userData" (ngSubmit)="onSubmit()">
+                    <mat-card style="margin-top: 10px;">
+                        <mat-card-subtitle style="margin-left: 10px;margin-top: 7px;"><strong>Insufficient Funds Override</strong></mat-card-subtitle>
+                        <mat-card-content>
+                            <div class='row'>
+                                <div class="form-group col-12">
+                                    <textarea type='text' 
+                                        class='form-control'
+                                        formControlName='insufficient_funds_override'
+                                    >
+                                    </textarea>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                    <mat-card style="margin-top: 10px;">
+                        <mat-card-subtitle style="margin-left: 10px;margin-top: 7px;"><strong>Document</strong></mat-card-subtitle>
+                        <mat-card-content>
+                            <div class='row'>
+                                <div class="form-group col-6">
+                                    <label >Reference</label>
+                                    <input type='text' 
+                                        class='form-control'
+                                        formControlName='reference'
+                                    >
+                                </div>
+                                <div class="form-group col-6">
+                                    <label>Captured By : </label>
+                                    <span>{{user}}</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="form-group col-6">
+                                    <label>Source BU</label>
+                                    <input type='text' 
+                                        class='form-control'
+                                        formControlName='source_bu'
+                                    >
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                    <mat-card style="margin-top: 10px;">
+                        <mat-card-subtitle style="margin-left: 10px;margin-top: 7px;"><strong>Debit Account Details</strong></mat-card-subtitle>
+                        <mat-card-content>
+                            <div class='row'>
+                                <div class="form-group col-6">
+                                    <label>Account No</label>
+                                    <input type='text' 
+                                        class='form-control'
+                                        formControlName='account_no'
+                                    >
+                                </div>
+                                <div class="form-group col-6">
+                                    <label>Name</label>
+                                    <input type='text' 
+                                        class='form-control'
+                                        formControlName='name'
+                                    >
+                                </div>
+                            </div>
+                            <div class='row'>
+                                <div class="form-group col-6">
+                                    <label>Current Account Balance</label>
+                                    <input type='number' 
+                                        class='form-control'
+                                        formControlName='current_account_balance'
+                                    >
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                    <mat-card style="margin-top: 10px;">
+                        <mat-card-subtitle style="margin-left: 10px;margin-top: 7px;"><strong>Customer Information</strong></mat-card-subtitle>
+                        <mat-card-content>
+                            <div class='row'>
+                                <div class="form-group col-3">
+                                    <label>Customer No</label>
+                                    <input type='text' 
+                                        class='form-control'
+                                        formControlName='customer_no'
+                                    >
+                                </div>
+                                <div class="form-group col-6">
+                                    <label>Name</label>
+                                    <input type='text' 
+                                        class='form-control'
+                                        formControlName='customer_name'
+                                    >
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                    <mat-card style="margin-top: 10px;">
+                        <mat-card-subtitle style="margin-left: 10px;margin-top: 7px;">
+                            <strong>Transfer Details</strong>
+                        </mat-card-subtitle>
+                        <mat-card-content>
+                            <div class='row'>
+                                <div class="form-group col-6">
+                                    <label>Currency</label>
+                                    <input type='text' 
+                                        class='form-control'
+                                        formControlName='currency'
+                                    >
+                                </div>
+                                <div class="form-group col-6">
+                                    <label>Amount</label>
+                                    <input type='number' 
+                                        class='form-control'
+                                        formControlName='amount'
+                                    >
+                                </div>
+                            </div>
+                            <div class='row'>
+                                <div class="form-group col-6">
+                                    <label>Debit Account Currency Equlvalent</label>
+                                    <input type='number' 
+                                        class='form-control'
+                                        formControlName='debit_amount_currency_equlvalent'
+                                    >
+                                </div>
+                                <div class="form-group col-6">
+                                    <label>MUR Equlvalent</label>
+                                    <input type='number' 
+                                        class='form-control'
+                                        formControlName='mru_equlvalent'
+                                    >
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                    <mat-card style="margin-top: 10px;">
+                        <mat-card-subtitle style="margin-left: 10px;margin-top: 7px;">
+                            <strong>Beneficiary Details</strong>
+                        </mat-card-subtitle>
+                        <mat-card-content>
+                            <div class='row'>
+                                <div class="form-group col-6">
+                                    <label>Account No. / IBAN</label>
+                                    <input type='text' 
+                                        class='form-control'
+                                        formControlName='beneficiary_account'
+                                    >
+                                </div>
+                                <div class="form-group col-6">
+                                    <label>Name</label>
+                                    <input type='text' 
+                                        class='form-control'
+                                        formControlName='beneficiary_name'
+                                    >
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                    <mat-card style="margin-top: 10px;">
+                        <mat-card-subtitle style="margin-left: 10px;margin-top: 7px;">
+                            <strong>Beneficiary Bank Details</strong>
+                        </mat-card-subtitle>
+                        <mat-card-content>
+                            <div class='row'>
+                                <div class="form-group col-6">
+                                    <label>Name</label>
+                                    <input type='text' 
+                                        class='form-control'
+                                        formControlName='beneficiary_bank_name'
+                                    >
+                                </div>
+                                <div class="form-group col-6">
+                                    <label>Swift Code</label>
+                                    <input type='text' 
+                                        class='form-control'
+                                        formControlName='swift_code'
+                                    >
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                    <mat-card style="margin-top: 10px;">
+                        <mat-card-subtitle style="margin-left: 10px;margin-top: 7px;">
+                            <strong>Deal Ticket Details</strong>
+                        </mat-card-subtitle>
+                        <mat-card-content>
+                            <div class='row'>
+                                <div class="form-group col-6">
+                                    <label>Agreed rate</label>
+                                    <input type='number' 
+                                        class='form-control'
+                                        formControlName='agreed_rate'
+                                    >
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                    <mat-card style="margin-top: 10px;">
+                        <mat-card-subtitle style="margin-left: 10px;margin-top: 7px;">
+                            <strong>Payment Details</strong>
+                        </mat-card-subtitle>
+                        <mat-card-content>
+                            <div class='row'>
+                                <div class="form-group col-12">
+                                    <label>Payment Details</label>
+                                    <input type='text' 
+                                        class='form-control'
+                                        formControlName='payment_details_1'
+                                    >
+                                </div>
+                            </div>
+                            <div class='row'>
+                                <div class="form-group col-12">
+                                    <label>Payment Details</label>
+                                    <input type='text' 
+                                        class='form-control'
+                                        formControlName='payment_details_2'
+                                    >
+                                </div>
+                            </div>
+                            <div class='row'>
+                                <div class="form-group col-12">
+                                    <label>Payment Details</label>
+                                    <input type='text' 
+                                        class='form-control'
+                                        formControlName='payment_details_3'
+                                    >
+                                </div>
+                            </div><div class='row'>
+                                <div class="form-group col-12">
+                                    <label>Payment Details</label>
+                                    <input type='text' 
+                                        class='form-control'
+                                        formControlName='payment_details_4'
+                                    >
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                    <mat-card style="margin-top: 10px;">
+                        <mat-card-subtitle style="margin-left: 10px;margin-top: 7px;">
+                            <strong>Override</strong>
+                        </mat-card-subtitle>
+                        <mat-card-content>
+                            <div class='row'>
+                                <div class="form-group col-12">
+                                    <label>Override Insufficient Funds</label>
+                                    <div style="margin-left: 10px">   
+                                        <input type="radio" name="override_insufficient_funds" value="yes"  formControlName="override_insufficient_funds"><label style="margin-right: 10px">Yes</label>
+                                        <input type="radio" name="override_insufficient_funds" value="no"  formControlName="override_insufficient_funds"><label style="margin-right: 10px">No</label>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                    <mat-card style="margin-top: 10px; margin-bottom: 10px;">
+                        <mat-card-subtitle style="margin-left: 10px;margin-top: 7px;">
+                            <strong>Comment to send to account officer</strong>
+                        </mat-card-subtitle>
+                        <mat-card-content>
+                            <div class='row'>
+                                <div class="form-group col-12">
+                                    <textarea type='text' 
+                                        class='form-control'
+                                        formControlName='comment_to_send_to_account_officer'
+                                    ></textarea>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                    <div class='row'>
+                        <div class= 'col-md-9 offset-md-3'>
+                            <button class = 'btn btn-danger' type="reset" (click)='goBack()' style=" background-color: rgb(242, 110, 110);">Cancel</button>
+                            <button class = 'btn btn-primary' type="submit" style="background-color: rgb(82, 155, 244);">Submit</button>
+                        </div>
+                    </div>    
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="col-6">
+        <h2> Pdf view simple usage</h2>
+<div id="outerContainer">
+ <div class="pdf-container">
+   <pdf-viewer
+ [src]="src"
+[rotation]="0"
+[original-size]="false"
+[show-all]="true"
+[fit-to-page]="false"
+ [zoom]="1"
+[zoom-scale]="'page-width'"
+ [stick-to-page]="false"
+ [render-text]="true"
+[external-link-target]="'blank'"
+[autoresize]="true"
+[show-borders]="false"
+ style="width: 100%; height: 1200px;"
+ ></pdf-viewer>
+</div>
+</div>
+</div>
+
