@@ -35,7 +35,8 @@ export class LoginComponent implements OnInit{
       // localStorage.setItem("companyId", res.data.user.company._id);
       this.route.navigate(["/"]);
     },err=>{
-      console.log(err);
+      console.log(err.response);
+      Swal.fire(err.error.message);
     })
   }
   forbiddenNames(control:FormControl):{[s:string]:any} | null{
