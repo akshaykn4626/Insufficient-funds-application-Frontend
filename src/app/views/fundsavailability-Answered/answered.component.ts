@@ -31,7 +31,7 @@ export class AnsweredComponent implements OnInit {
         resData.push({
                 'Customer_Number':fund.customerNumber,
                 'Customer_Name':fund.customerName,
-                'Account-Number':fund.accountNumber,
+                'Account-Number':fund.debitAccountNumber,
                 'Currency':fund.transactionCurrency,
                 'Amount':fund.trasactionAmount,
                 'Account_Officer':fund.accountOfficer,

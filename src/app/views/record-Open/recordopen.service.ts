@@ -8,6 +8,7 @@ export class RecordOpen {
     public userId = localStorage.getItem("userId");
     constructor(private https: HttpClient){}
     creation(data:any){
+        console.log(this.userId);
         return axios.post(environment.ANGULAR_APP_BACKENDP_SERVICE+'insufficient/status/unassigned/user/'+this.userId+'/InSufficient', data);
     }
     

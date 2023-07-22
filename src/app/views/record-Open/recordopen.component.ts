@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { RecordOpen } from './recordopen.service';
 import { Router,ActivatedRoute  } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'record-open',
@@ -53,7 +54,7 @@ export class RecordOpenComponent implements OnInit {
     this.submitted = true;
     var data ={
       "businessKey": this.userData.value.reference,
-      // "application": "k2k",
+       //"application": "k2k",
       "comments": this.userData.value.comment_to_send_to_account_officer,
       "transactionCurrency": this.userData.value.currency,
       "trasactionAmount":this.userData.value.amount,
@@ -86,6 +87,7 @@ export class RecordOpenComponent implements OnInit {
     this.createUserService.creation(data)
     .then(res=>{
       console.log(res);
+      Swal.fire("Submit Successfully !");
     })
     .catch(err=>console.log(err))
   }
